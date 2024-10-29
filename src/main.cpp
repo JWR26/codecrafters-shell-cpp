@@ -10,5 +10,5 @@ int main() {
   std::string input;
   std::getline(std::cin, input);
 
-  std::cout << "nonesistent: " << input << " not found\n";
+  std::cout << "nonexistent: " << input << " not found\n";
 }
