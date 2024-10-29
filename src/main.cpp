@@ -13,4 +13,6 @@ int main() {
 
     std::cout << input << ": command not found\n";
   }
+
+  return 0;
 }
