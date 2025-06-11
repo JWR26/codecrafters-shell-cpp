@@ -32,7 +32,7 @@ int main() {
           output += it->str;
           output += ' ';
         }
-        std::cout << output;
+        std::cout << output << '\n';
       }
       break;
     default:
