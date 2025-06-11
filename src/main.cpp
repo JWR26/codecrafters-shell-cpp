@@ -29,7 +29,7 @@ int main() {
       {
         std::vector<cppshell::Token>::const_iterator it = ++tokens.begin();
         while(it != tokens.end()){
-          std::cout << *it;
+          std::cout << **it;
           ++it;
           if (it != tokens.end()){
             std::cout << ' ';
