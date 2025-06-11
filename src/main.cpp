@@ -16,6 +16,7 @@ int main() {
       return 0;
     }
 
+    
     std::cout << input << ": command not found\n";
   }
 
