@@ -27,9 +27,12 @@ int main() {
       return 0;
     case cppshell::TOKEN_TYPE::ECHO:
       {
+        std::string output;
         for(auto it = tokens.begin() + 1; it != tokens.end(); ++it){
-          std::cerr << *it;
+          output += it->str;
+          output += ' ';
         }
+        std::cout << output;
       }
       break;
     default:
