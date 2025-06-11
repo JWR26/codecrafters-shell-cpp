@@ -55,7 +55,7 @@ namespace cppshell{
 
         std::string token;
 
-        while((pos = input.find(' ', last + 1)) != std::string::npos){
+        while((pos = input.find(' ', last)) != std::string::npos){
             std::cerr << pos << ' ' << last << '\n';
             token = input.substr(last, pos);
             last = pos;
