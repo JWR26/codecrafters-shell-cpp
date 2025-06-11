@@ -45,15 +45,11 @@ namespace cppshell{
 
         while(it != input.end()){
             std::string::const_iterator start = it;
-            if (*it == ' '){
-                ++it;
-                continue;
-            }
-            while (*(it + 1) != ' ' && *(it + 1) != '\0'){
+            while (*(it) != ' ' && *(it) != input.end()){
                 ++it;
             }
             
-            std::string word{start, it+1};
+            std::string word{start, it};
 
             std::unordered_map<std::string, TOKEN_TYPE>::const_iterator res = RESERVED_WORDS.find(word);
 
@@ -63,7 +59,6 @@ namespace cppshell{
             else{
                 tokens.emplace_back(Token(TOKEN_TYPE::WORD, word));
             }
-            ++it;
         }
 
         return tokens;
