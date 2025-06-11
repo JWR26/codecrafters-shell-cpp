@@ -1,5 +1,8 @@
 #include <iostream>
 #include <string>
+#include <vector>
+
+#include "tokenizer.h"
 
 int main() {
   // Flush after every std::cout / std:cerr
@@ -16,7 +19,9 @@ int main() {
       return 0;
     }
 
-    
+    std::vector<cppshell::Token> tokens = cppshell::tokenize(input);
+
+
     std::cout << input << ": command not found\n";
   }
 
