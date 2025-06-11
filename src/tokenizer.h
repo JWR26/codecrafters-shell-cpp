@@ -17,7 +17,7 @@ namespace cppshell{
     const std::unordered_map<std::string, TOKEN_TYPE> RESERVED_WORDS{
         {"exit", TOKEN_TYPE::EXIT},
         {"echo", TOKEN_TYPE::ECHO},
-        {"type", TOKEN_TYPE::WORD},
+        {"type", TOKEN_TYPE::TYPE},
     };
 
     struct Token{
