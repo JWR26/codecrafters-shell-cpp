@@ -16,6 +16,8 @@ int main() {
     std::getline(std::cin, input);
 
     std::vector<cppshell::Token> tokens = cppshell::tokenize(input);
+
+    std::cout << tokens.size();
     
     if (tokens.empty()){
       continue;
@@ -33,8 +35,8 @@ int main() {
           ++it;
           if (it != tokens.end()){
             std::cout << ' ';
-          };
-        }
+          }
+        };
       }
       break;
     default:
