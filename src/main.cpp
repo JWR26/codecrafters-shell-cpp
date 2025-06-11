@@ -27,14 +27,9 @@ int main() {
       return 0;
     case cppshell::TOKEN_TYPE::ECHO:
       {
-        std::vector<cppshell::Token>::const_iterator it = ++tokens.begin();
-        while(it != tokens.end()){
-          std::cout << *it;
-          if (it != tokens.end()){
-            std::cout << ' ';
-          }
-          ++it;
-        };
+        for(auto it = tokens.begin() + 1; tokens.end(); ++it){
+          std::cout << it;
+        }
       }
       break;
     default:
