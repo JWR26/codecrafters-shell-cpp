@@ -51,11 +51,13 @@ namespace cppshell{
         std::string::const_iterator it = input.begin();
 
         size_t pos{0};
+        size_t last{0};
 
         std::string token;
 
-        while((pos = input.find(' ')) != std::string::npos){
-            token = s.substr(0, pos);
+        while((pos = input.find(' ', last + 1)) != std::string::npos){
+            token = input.substr(last, pos);
+            last = pos;
             tokens.emplace_back(token);
         }
 
