@@ -29,6 +29,7 @@ int main() {
       {
         std::string output;
         for(auto it = tokens.begin() + 1; it != tokens.end(); ++it){
+          std::cout >> it->str;
           output += it->str;
           output += ' ';
         }
