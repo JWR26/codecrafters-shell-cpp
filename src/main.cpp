@@ -39,7 +39,7 @@ int main() {
     case cppshell::TOKEN_TYPE::TYPE:
       {
         if (tokens[1].token_type == cppshell::TOKEN_TYPE::WORD){
-          std::cout << "type: command not found\n";
+          std::cout << tokens[1].str << ": not found\n";
         }
         else{
           std::cout << tokens[1].str << " is a shell builtin\n";
