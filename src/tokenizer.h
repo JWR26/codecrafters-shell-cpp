@@ -62,6 +62,8 @@ namespace cppshell{
             }
             ++it;
         }
+
+        return tokens;
     }
 }
 
