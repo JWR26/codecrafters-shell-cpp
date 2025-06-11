@@ -61,7 +61,8 @@ namespace cppshell{
             last = pos + 1;
             tokens.emplace_back(token);
         }
-
+        
+        token = input.substr(last);
         tokens.emplace_back(token);
 
         return tokens;
