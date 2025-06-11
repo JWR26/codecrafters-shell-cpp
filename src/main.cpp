@@ -36,6 +36,16 @@ int main() {
         std::cout << output << '\n';
       }
       break;
+    case cppshell::TOKEN_TYPE::TYPE:
+      {
+        if (tokens[1].token_type == cppshell::TOKEN_TYPE::WORD){
+          std::cout << "type: command not found\n";
+        }
+        else{
+          std::cout << tokens[1].str << " is a shell builtin\n";
+        }
+      }
+      break;
     default:
       std::cout << tokens.front().str << ": command not found\n";
       break;
