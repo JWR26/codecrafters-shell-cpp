@@ -45,6 +45,10 @@ namespace cppshell{
 
         while(it != input.end()){
             std::string::const_iterator start = it;
+            if (*it == ' '){
+                ++it;
+                continue;
+            }
             while (*(it + 1) != ' ' && *(it + 1) != '\0'){
                 ++it;
             }
