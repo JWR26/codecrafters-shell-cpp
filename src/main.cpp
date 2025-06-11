@@ -26,15 +26,17 @@ int main() {
     case cppshell::TOKEN_TYPE::EXIT:
       return 0;
     case cppshell::TOKEN_TYPE::ECHO:
-      std::vector<cppshell::Token>::const_iterator it = ++tokens.begin();
-      while(it != tokens.end()){
-        std::cout << *it;
-        ++it;
-        if (it != tokens.end()){
-          std::cout << ' ';
-        };
+      {
+        std::vector<cppshell::Token>::const_iterator it = ++tokens.begin();
+        while(it != tokens.end()){
+          std::cout << *it;
+          ++it;
+          if (it != tokens.end()){
+            std::cout << ' ';
+          };
+        }
       }
-    
+      break;
     default:
       std::cout << *it << ": command not found\n";
       break;
