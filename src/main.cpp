@@ -29,7 +29,7 @@ int main() {
       {
         std::vector<cppshell::Token>::const_iterator it = ++tokens.begin();
         while(it != tokens.end()){
-          std::cout << **it;
+          std::cout << *it;
           ++it;
           if (it != tokens.end()){
             std::cout << ' ';
@@ -38,7 +38,7 @@ int main() {
       }
       break;
     default:
-      std::cout << *it << ": command not found\n";
+      std::cout << tokens.front().str << ": command not found\n";
       break;
     }
 
