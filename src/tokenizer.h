@@ -21,12 +21,19 @@ namespace cppshell{
     };
 
     struct Token{
-        TOKEN_TYPE token_type;
+        TOKEN_TYPE token_type{TOKEN_TYPE::WORD};
         std::string str;
 
         Token() {}
 
-        Token(const TOKEN_TYPE& t, const std::string& s) : token_type(t), str(s) {}
+        Token(const std::string& s) {
+            str = s;
+            std::unordered_map<std::string, TOKEN_TYPE>::const_iterator res = RESERVED_WORDS.find(str);
+
+            if (res != RESERVED_WORDS.end()){
+                token_type = res->second;
+            }
+        }
 
         friend std::ostream& operator<<(std::ostream& os, const Token& t) {
             os << t.str;
@@ -43,23 +50,16 @@ namespace cppshell{
 
         std::string::const_iterator it = input.begin();
 
-        while(it != input.end()){
-            std::string::const_iterator start = it;
-            while (*(it) != ' ' || it != input.end()){
-                ++it;
-            }
-            
-            std::string word{start, it};
+        size_t pos{0};
 
-            std::unordered_map<std::string, TOKEN_TYPE>::const_iterator res = RESERVED_WORDS.find(word);
+        std::string token;
 
-            if (res != RESERVED_WORDS.end()){
-                tokens.emplace_back(Token(res->second, word));
-            }
-            else{
-                tokens.emplace_back(Token(TOKEN_TYPE::WORD, word));
-            }
+        while((pos = input.find(' ')) != std::string::npos){
+            token = s.substr(0, pos);
+            tokens.emplace_back(token);
         }
+
+        tokens.emplace_back(token);
 
         return tokens;
     }
