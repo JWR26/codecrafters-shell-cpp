@@ -15,14 +15,32 @@ int main() {
     std::string input;
     std::getline(std::cin, input);
 
-    if(input == "exit 0"){
-      return 0;
+    std::vector<cppshell::Token> tokens = cppshell::tokenize(input);
+    
+    if (tokens.empty()){
+      continue;
     }
 
-    std::vector<cppshell::Token> tokens = cppshell::tokenize(input);
+    switch (tokens.front().token_type)
+    {
+    case cppshell::TOKEN_TYPE::EXIT:
+      return 0;
+    case cppshell::TOKEN_TYPE::ECHO:
+      std::vector<cppshell::Token>::const_iterator it = ++tokens.begin();
+      while(it != tokens.end()){
+        std::cout << *it;
+        ++it;
+        if (it != tokens.end()){
+          std::cout << ' ';
+        };
+      }
+    
+    default:
+      std::cout << *it << ": command not found\n";
+      break;
+    }
 
-
-    std::cout << input << ": command not found\n";
+    
   }
 
   return 0;

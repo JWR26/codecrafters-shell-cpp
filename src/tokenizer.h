@@ -33,10 +33,9 @@ namespace cppshell{
         }
     };
 
-    bool is_command(const TOKEN_TYPE& t) {
-        return (t != TOKEN_TYPE::WORD);
+    bool is_command(const Token& t) {
+        return (t.token_type != TOKEN_TYPE::WORD);
     }
-
 
     std::vector<Token> tokenize(const std::string& input){
         std::vector<Token> tokens{};
