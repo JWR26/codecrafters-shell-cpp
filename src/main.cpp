@@ -17,8 +17,6 @@ int main() {
 
     std::vector<cppshell::Token> tokens = cppshell::tokenize(input);
 
-    std::cout << tokens.size();
-
     if (tokens.empty()){
       continue;
     }
