@@ -17,8 +17,6 @@ int main() {
 
     std::vector<cppshell::Token> tokens = cppshell::tokenize(input);
 
-    std::cout << tokens.size();
-    
     if (tokens.empty()){
       continue;
     }
@@ -32,10 +30,10 @@ int main() {
         std::vector<cppshell::Token>::const_iterator it = ++tokens.begin();
         while(it != tokens.end()){
           std::cout << *it;
-          ++it;
           if (it != tokens.end()){
             std::cout << ' ';
           }
+          ++it;
         };
       }
       break;
