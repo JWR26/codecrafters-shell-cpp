@@ -17,10 +17,11 @@ int main() {
 
   std::vector<std::string> paths;
 
-  size_t length = std::strlen(PATH);
+  size_t i{0};
 
-  for (size_t i{0}; i < length; i++){
+  while (PATH[i]){
     std::cout << PATH[i];
+    ++i;
   }
 
   while (true){
