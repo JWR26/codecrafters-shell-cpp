@@ -19,8 +19,8 @@ int main() {
 
   std::vector<std::string> directories;
 
-  const char* delimiter = ":";
-  char* token = std::strtok(PATH, delimiter);
+  const char* delimiters = ":";
+  char* token = std::strtok(PATH, delimiters);
 
   while (token){
     std::cout << token << '\n';
