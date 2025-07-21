@@ -12,7 +12,7 @@ int main() {
 
   // get PATH (environment variable and convert to a list of directories)
   char* env = std::getenv("PATH");
-  std::cout << env;
+  std::cerr << env << std::endl;
 
 
   while (true){
