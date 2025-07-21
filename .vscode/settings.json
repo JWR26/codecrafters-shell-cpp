@@ -57,7 +57,14 @@
         "list": "cpp",
         "unordered_map": "cpp",
         "vector": "cpp",
-        "xhash": "cpp"
+        "xhash": "cpp",
+        "algorithm": "cpp",
+        "chrono": "cpp",
+        "filesystem": "cpp",
+        "forward_list": "cpp",
+        "iomanip": "cpp",
+        "optional": "cpp",
+        "sstream": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

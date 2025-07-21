@@ -1,4 +1,5 @@
 #include <cstdlib>
+#include <cstring>
 #include <filesystem>
 #include <iostream>
 #include <string>
@@ -12,20 +13,17 @@ int main() {
   std::cerr << std::unitbuf;
 
   // get PATH (environment variable and convert to a list of directories)
-  char* PATH = std::getenv("PATH");
+  const char* PATH = std::getenv("PATH");
+  
   std::cerr << PATH << std::endl;
 
   std::vector<std::string> directories;
 
-  size_t i{0};
+  const char* delimiter = ":";
+  char* token = std:strtok(PATH, delimiter);
 
-  while (PATH[i]){
-    std::cerr << PATH[i];
-    ++i;
-  }
-
-  for (const auto& d : directories){
-    std::cerr << d << '\n';
+  while (token){
+    std::cout << token << '\n';
   }
 
   while (true){
