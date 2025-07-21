@@ -20,7 +20,7 @@ int main() {
   std::vector<std::string> directories;
 
   const char* delimiter = ":";
-  char* token = std:strtok(PATH, delimiter);
+  char* token = std::strtok(PATH, delimiter);
 
   while (token){
     std::cout << token << '\n';
