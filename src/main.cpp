@@ -13,7 +13,7 @@ int main() {
   std::cerr << std::unitbuf;
 
   // get PATH (environment variable and convert to a list of directories)
-  const char* PATH = std::getenv("PATH");
+  char* PATH = std::getenv("PATH");
   
   std::cerr << PATH << std::endl;
 
@@ -24,6 +24,7 @@ int main() {
 
   while (token){
     std::cout << token << '\n';
+    token = std::strtok(nullptr, delimiters);
   }
 
   while (true){
