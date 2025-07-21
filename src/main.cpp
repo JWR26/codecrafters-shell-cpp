@@ -12,19 +12,16 @@ int main() {
   std::cerr << std::unitbuf;
 
   // get PATH (environment variable and convert to a list of directories)
-  const char* PATH = std::getenv("PATH");
+  char* PATH = std::getenv("PATH");
   std::cerr << PATH << std::endl;
 
   std::vector<std::string> paths;
 
-  char* prev = PATH;
+  size_t length = strlen(PATH);
 
-  while(*prev != '\0'){
-    std::cout << *prev;
-    ++prev;
+  for (size_t i{0}; i < length, i++){
+    std::cout << PATH[i];
   }
-
-
 
   while (true){
     std::cout << "$ ";
