@@ -17,7 +17,7 @@ int main() {
 
   std::vector<std::string> paths;
 
-  char* prev = &PATH[0];
+  char* prev = PATH[0];
 
   while(*prev != '\0'){
     std::cout << *prev;
