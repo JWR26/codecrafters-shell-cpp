@@ -17,7 +17,7 @@ int main() {
 
   std::vector<std::string> paths;
 
-  size_t length = strlen(PATH);
+  size_t length = std::strlen(PATH);
 
   for (size_t i{0}; i < length; i++){
     std::cout << PATH[i];
