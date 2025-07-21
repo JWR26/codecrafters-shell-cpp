@@ -1,3 +1,4 @@
+#include <cstdlib>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -5,6 +6,10 @@
 #include "tokenizer.h"
 
 int main() {
+  // get PATH (environment variable and convert to a list of directories)
+
+
+
   // Flush after every std::cout / std:cerr
   std::cout << std::unitbuf;
   std::cerr << std::unitbuf;
