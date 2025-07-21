@@ -23,8 +23,12 @@ int main() {
   char* token = std::strtok(PATH, delimiters);
 
   while (token){
-    std::cout << token << '\n';
+    directories.emplace_back(token);
     token = std::strtok(nullptr, delimiters);
+  }
+
+  for(const auto& d : directories){
+    std::cout << d << '\n';
   }
 
   while (true){
