@@ -19,7 +19,7 @@ int main() {
 
   size_t length = strlen(PATH);
 
-  for (size_t i{0}; i < length, i++){
+  for (size_t i{0}; i < length; i++){
     std::cout << PATH[i];
   }
 
