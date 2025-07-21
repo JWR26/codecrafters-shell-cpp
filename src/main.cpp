@@ -15,13 +15,17 @@ int main() {
   char* PATH = std::getenv("PATH");
   std::cerr << PATH << std::endl;
 
-  std::vector<std::string> paths;
+  std::vector<std::string> directories;
 
   size_t i{0};
 
   while (PATH[i]){
-    std::cout << PATH[i];
+    std::cerr << PATH[i];
     ++i;
+  }
+
+  for (const auto& d : directories){
+    std::cerr << d << '\n';
   }
 
   while (true){
